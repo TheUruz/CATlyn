@@ -10,7 +10,7 @@ import requests
 # ENDPOINT = f"https://europe.api.riotgames.com/lol/match/v5/matches/by-puuid/{Riot.SUMMONER.get('puuid')}/ids?start=0&count=20"
 
 
-class RiotLoLAPI():
+class CATlyn():
     """
     MY CUSTOM INTERFACE to RiotAPIs.\n
     All methods listed as public are meant to be the ones to be consumed. and/or overridden.

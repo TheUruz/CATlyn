@@ -14,8 +14,8 @@ You will need to store your API key (get it from [here](https://developer.riotga
 
 ```json
     {
-        "key": <your key>,
-        "summoner": <your in-game name>
+        "key": "your key",
+        "summoner": "your in-game name"
     }
 ```
 

@@ -1,4 +1,4 @@
-"""Entry point for my custom Riot API"""
+"""Entry point for my CATlyn test"""
 
 import json
 import lib
@@ -6,9 +6,9 @@ import lib
 CONFIGS = "config_files/config.json"
 SECRETS = "config_files/secrets.json"
 
-Riot = lib.RiotLoLAPI()
-Riot.load_config(CONFIGS, SECRETS)
+CATlyn = lib.CATlyn()
+CATlyn.load_config(CONFIGS, SECRETS)
 
 # EXAMPLE
-data = Riot.get_champion_info(champ_name="Thresh")
+data = CATlyn.get_champion_info(champ_name="Thresh")
 print(json.dumps(data, indent=4, ensure_ascii=False))
