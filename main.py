@@ -1,12 +1,12 @@
 """Entry point for my CATlyn test"""
 
 import json
-import lib
+import lib.catlyn as catlyn
 
 CONFIGS = "config_files/config.json"
 SECRETS = "config_files/secrets.json"
 
-CATlyn = lib.CATlyn()
+CATlyn = catlyn.CATlyn()
 CATlyn.load_config(CONFIGS, SECRETS)
 
 # EXAMPLE
