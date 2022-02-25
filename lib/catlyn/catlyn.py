@@ -1,10 +1,8 @@
-"""Library for my custom Riot APIs
-"""
+"""Library for my custom Riot APIs"""
 
 import json
 from typing import Any, List, Union
 import requests
-
 
 # ENDPOINT = f"/lol/summoner/v4/summoners/by-name/{Riot.SUMMONER}"
 # ENDPOINT = f"https://europe.api.riotgames.com/lol/match/v5/matches/by-puuid/{Riot.SUMMONER.get('puuid')}/ids?start=0&count=20"
