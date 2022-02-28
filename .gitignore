@@ -4,3 +4,7 @@ __pycache__/
 dragontail*/
 dragontail*.*
 secrets.json
+eggs/
+.eggs/
+*.egg-info/
+*.egg
