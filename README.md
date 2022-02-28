@@ -1,10 +1,7 @@
 <center><h1>CATlyn</h1></center>
 
-
 [![Python Version](https://img.shields.io/static/v1?label=Python&message=v3.9.0&logo=python&logoColor=white&color=blue)](https://www.python.org/downloads/release/python-390/)
 [![GitHub stars](https://img.shields.io/github/stars/TheUruz/CATlyn?style=flat&logo=github)](https://github.com/TheUruz/CATlyn/stargazers)
-
-<br>
 
 ## :page_with_curl: Project Descrption
 
