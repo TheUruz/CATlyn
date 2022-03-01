@@ -30,8 +30,8 @@ class Settings():
         """ sets champions datapath in self.config['data_paths'] """
         if not self.__secrets_path:
             return None
-        champion_dp = self.__config_path.replace("${language}", self.config['language'])
-        self.config['data_paths']['champions'] = "../" + champion_dp
+        champion_dp = self.config['data_paths']['champions'].replace("${language}", self.config['language'])
+        self.config['data_paths']['champions'] = champion_dp
 
     # * PUBLIC METHODS
 
