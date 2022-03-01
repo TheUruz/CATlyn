@@ -9,7 +9,7 @@ CATlyn is a wrapper around Riot API. it is meant to provide all the useful infor
 
 ## :bulb: What do i need to run the code?
 
-First you have to download the latest version of Riot's ***Data Dragon*** from [this page](https://developer.riotgames.com/docs/lol#data-dragon_versions) which is basically League of Legends's entire assets and data. After that, extract its content (which is a folder with the same name of the archive) and place it in the root directory of the project.
+First you have to download the latest version of Riot's ***Data Dragon*** from [this page](https://developer.riotgames.com/docs/lol#data-dragon_versions) which is basically League of Legends's entire assets and data. After that, extract its content (which is a folder with the same name of the archive) and place it in the root of the project.
 
 You will need to store your API key (get it from [here](https://developer.riotgames.com/) if you have not already. a developer key is enough to make this work) and place it in a json file along with your summoner name as follows
 
@@ -20,14 +20,14 @@ You will need to store your API key (get it from [here](https://developer.riotga
     }
 ```
 
-this above is how your `secrets.json` file should look like. Once you have it place it in the `/config_files` folder.
+this above is how your `secrets.json` file should look like. Once you have it place it in `/catlyn/config_files`.
 
 the last step depends on your intentions toward CATlyn:
 
 - if you want to develop more functionalities run `python3 setup.py develop` to create a reference to the catlyn package in your current python environment.
 - if you want to consume CATlyn's functionalities instead install it in your current environment with `python3 setup.py install`
 
-both commands should be launched from the repository's root
+both commands should be launched from the repository's root.
 
 For every other doubt i'm trying to keep all the docstring updated so you can just ask for `help()` about it.
 
