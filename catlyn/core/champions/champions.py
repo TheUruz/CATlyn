@@ -1,3 +1,4 @@
+"""This module contains the ChampionList class which is used to represents lists of Champion objects"""
 from typing import List
 from catlyn.core.champion.champion import Champion
 

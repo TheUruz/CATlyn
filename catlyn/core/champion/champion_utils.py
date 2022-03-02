@@ -1,3 +1,4 @@
+"""Utility module containing functions relative to single champion instances"""
 import json
 from catlyn.core.utils.errors import MissingChampId, MissingChampName
 from catlyn.core.utils.settings import Settings
