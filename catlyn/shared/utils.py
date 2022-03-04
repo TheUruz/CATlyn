@@ -1,11 +1,16 @@
-"""Utility module containing functions relative to single champion instances"""
+"""Utility classes and functions"""
+#! watch out for circular imports since this module is meant to be imported by many packages
+
 import json
-from catlyn.core.utils.errors import MissingChampId, MissingChampName
-from catlyn.core.utils.settings import Settings
-from catlyn.core.champion.champion import Champion
+from catlyn.shared import errors as _err
+from catlyn.config import settings as _settings
+from catlyn.core.champion import champion as _champion
+
+# ENDPOINT = f"/lol/summoner/v4/summoners/by-name/{Riot.SUMMONER}"
+# ENDPOINT = f"https://europe.api.riotgames.com/lol/match/v5/matches/by-puuid/{Riot.SUMMONER.get('puuid')}/ids?start=0&count=20"
 
 
-def get_champion_file(settings: Settings) -> dict:
+def get_champion_file(settings: _settings.Settings) -> dict:
     """Retrieve championFull.json file data
 
     Args:
@@ -21,7 +26,7 @@ def get_champion_file(settings: Settings) -> dict:
         return champ_data
 
 
-def get_champion_by_name(champ_name: str, settings: Settings) -> Champion:
+def get_champion_by_name(champ_name: str, settings: _settings.Settings) -> _champion.Champion:
     """Retrieve champion object from a champion name
 
     Args:
@@ -35,11 +40,11 @@ def get_champion_by_name(champ_name: str, settings: Settings) -> Champion:
     try:
         champ_data = full_data["data"][champ_name]
     except KeyError as err:
-        raise MissingChampName(champ_name) from err
+        raise _err.MissingChampName(champ_name) from err
     return champ_data
 
 
-def get_champion_by_id(champ_id: str, settings: Settings) -> Champion:
+def get_champion_by_id(champ_id: str, settings: _settings.Settings) -> _champion.Champion:
     """Retrieve champion object from champion id
 
     Args:
@@ -57,6 +62,13 @@ def get_champion_by_id(champ_id: str, settings: Settings) -> Champion:
     try:
         champ_name = full_data["keys"][champ_id]
     except KeyError as err:
-        raise MissingChampId(champ_id) from err
+        raise _err.MissingChampId(champ_id) from err
     champ_data = get_champion_by_name(champ_name=champ_name, settings=settings)
     return champ_data
+
+
+def check_url(api_url: str) -> str:
+    """ checks if passed in urls are relative or absolute """
+    if api_url.startswith("http"):
+        return api_url
+    return ""

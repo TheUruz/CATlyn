@@ -1,4 +1,4 @@
-""" This module contains all possibile CATlyn errors"""
+"""Contains all possibile CATlyn errors"""
 from typing import Union
 
 
