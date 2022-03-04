@@ -20,7 +20,7 @@ You will need to store your API key (get it from [here](https://developer.riotga
     }
 ```
 
-this above is how your `secrets.json` file should look like. Once you have it place it in `/catlyn/config_files`.
+this above is how your `secrets.json` file should look like. Once you have it place it in `/catlyn/config`.
 
 the last step depends on your intentions toward CATlyn:
 
