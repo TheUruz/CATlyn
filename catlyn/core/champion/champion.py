@@ -1,9 +1,9 @@
-"""This module contains the Champion class representing single a single champion instance"""
+"""Contains the Champion class representing a single champion instance"""
 import json
 
 
 class Champion():
-    """Representing a champion object"""
+    """Representing a single champion object"""
 
     def __init__(self, champ_id: int, champ_name: str) -> None:
         self.__champ_id = champ_id
