@@ -10,3 +10,4 @@ from .config.settings import Settings
 
 
 VERSION = "0.0.1"
+print(">> CATlyn version: ", VERSION)
