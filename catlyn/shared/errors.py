@@ -16,3 +16,11 @@ class MissingChampName(Exception):
     def __init__(self, champ_name: str) -> None:
         self.error_msg = f"Cannot find any champion named '{champ_name}'"
         super().__init__(self.error_msg)
+
+
+class RiotKeyExpired(Exception):
+    """Raised when the provided API key is expired"""
+
+    def __init__(self) -> None:
+        self.error_msg = "The provided Riot API key is expired. please refresh your API key"
+        super().__init__(self.error_msg)

@@ -1,7 +1,7 @@
 {
     "base_url": "https://${region}.api.riotgames.com",
     "data_paths": {
-        "champions": "../../dragontail-12.4.1/12.4.1/data/${language}/championFull.json"
+        "champions": "./dragontail-12.4.1/12.4.1/data/${language}/championFull.json"
     },
     "language": "en_GB",
     "region": "euw1"
