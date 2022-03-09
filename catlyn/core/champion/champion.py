@@ -11,6 +11,7 @@ class Champion():
         self.title = str()
         self.stats = dict()
         self.key = int()
+        self.resource_type = str()
         self.__load_data(champ_data)
 
     # * PRIVATE AND PROTECTED METHODS
@@ -24,6 +25,8 @@ class Champion():
         self.key = int(champ_data["key"])
         self.title = champ_data["title"]
         self.stats = champ_data["stats"]
+        self.resource_type = champ_data["partype"]
+        self.info = champ_data["info"]
         self.__load_spells(champ_data["spells"])
 
     def __load_spells(self, spells: list) -> None:
@@ -33,8 +36,10 @@ class Champion():
                 "key": lookup_spells[i],
                 "name": spell["name"],
                 "description": spell["description"],
-                "costBurn": spell["costBurn"],
-                "costType": spell["costType"]
+                "cost": spell["cost"],
+                "costType": self.resource_type,
+                "cooldown": spell["cooldown"]
+                # TODO add spell dmg here
             }
             self.spells.append(spell_data)
 
@@ -47,6 +52,8 @@ class Champion():
             "key": self.key,
             "name": self.name,
             "title": self.title,
+            "resource_type": self.resource_type,
+            "info": self.info,
             "stats": self.stats,
             "spells": self.spells
         }
