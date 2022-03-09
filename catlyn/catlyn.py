@@ -32,7 +32,7 @@ class Catlyn():
         return data
 
     # * PUBLIC METHODS
-    def get_free_rotation(self, sort_by: str = "name") -> list[_champion.Champion]:
+    def get_free_rotation(self, sort_by: str = "name") -> list[tuple]:
         """ get current week's champion rotation """
         endpoint = "/lol/platform/v3/champion-rotations"
         data = self._get(api_url=endpoint)
@@ -43,7 +43,7 @@ class Catlyn():
         champ_rotation = []
         for champ_id in free_champs_ids:
             champ = self.get_champion_by_id(champ_id=str(champ_id))
-            champ_rotation.append((champ_id, champ["id"]))  # TODO continue here
+            champ_rotation.append((champ.key, champ.name))
         if sort_by == "id":
             champ_rotation.sort(key=lambda x: x[0])
         elif sort_by == "name":
@@ -65,6 +65,8 @@ class Catlyn():
             champ_data = full_data["data"][champ_name]
         except KeyError as err:
             raise _err.MissingChampName(champ_name) from err
+
+        champ_data = _champion.Champion(champ_data)
         return champ_data
 
     def get_champion_by_id(self, champ_id: str) -> _champion.Champion:
